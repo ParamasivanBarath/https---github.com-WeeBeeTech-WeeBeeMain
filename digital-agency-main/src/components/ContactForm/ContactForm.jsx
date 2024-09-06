@@ -21,6 +21,7 @@ const ContactForm = () => {
       .post("http://localhost:5000/api/contact", formData)
       .then((response) => {
         console.log("Form submitted successfully:", response.data);
+        window.alert('form done');
         setFormData({
           name: "",
           email: "",
@@ -28,10 +29,12 @@ const ContactForm = () => {
           message: "",
         });
       })
+      
       .catch((error) => {
         console.error("There was an error submitting the form:", error);
       });
   };
+ 
 
   return (
     <div className="dark:bg-gray-950 dark:text-white duration-300 px-4 py-10">
